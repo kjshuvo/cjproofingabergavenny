@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CJP Roofing | Expert Roofing, Carpentry & Kitchen Fitting</title>
+    <meta name="description" content="Specialising in roofing repairs, carpentry, and bespoke kitchen fitting across Abergavenny and surrounding areas in Wales.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#143E62',      /* Main Logo Blue */
+                            navyDark: '#0A253D',  /* Deep background */
+                            accent: '#2C6691',    /* Secondary Blue */
+                            gold: '#E5A93C',      /* Colorful Accent */
+                            goldDark: '#C48B28',  /* Hover state for gold */
+                            cream: '#F8F9FA',     /* Off-white */
+                            warmWhite: '#FFFFFF', /* Pure White */
+                            slate: '#1A1A1A',     /* Near Black */
+                            muted: '#666666',     /* Muted Text */
+                            lightBg: '#F0F4F8',   /* Light Grayish-Blue Background */
+                            border: '#E2E8F0',    /* UI Borders */
+                        }
+                    },
+                    fontFamily: {
+                        'heading': ['Outfit', 'sans-serif'],
+                        'body': ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body { font-family: 'DM Sans', sans-serif; background-color: #FFFFFF; color: #1A1A1A; overflow-x: hidden; }
+        @media (max-width: 767px) { body { padding-bottom: 80px; } }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Outfit', sans-serif; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F0F4F8; }
+        ::-webkit-scrollbar-thumb { background: #E5A93C; border-radius: 99px; }
+
+        /* Buttons */
+        .btn-primary { background: linear-gradient(135deg, #E5A93C 0%, #C48B28 100%); color: #0A253D; font-weight: 700; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); box-shadow: 0 4px 20px rgba(229,169,60,0.3); }
+        .btn-primary:hover { box-shadow: 0 8px 30px rgba(229,169,60,0.5); transform: translateY(-3px); }
+        
+        .btn-navy { background: #143E62; color: #fff; font-weight: 700; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .btn-navy:hover { background: #0A253D; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(20,62,98,0.3); }
+
+        /* WhatsApp Pulse */
+        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); } 70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+        .whatsapp-float { animation: pulse-green 2s infinite; }
+
+        /* Call Pulse */
+        @keyframes pulse-gold { 0% { box-shadow: 0 0 0 0 rgba(229,169,60,0.6); } 70% { box-shadow: 0 0 0 18px rgba(229,169,60,0); } 100% { box-shadow: 0 0 0 0 rgba(229,169,60,0); } }
+        .call-float { animation: pulse-gold 2s infinite; }
+
+        /* Mobile Menu */
+        .mobile-menu { transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
+        .mobile-menu.open { transform: translateX(0); }
+
+        /* Image Slider */
+        .slider-container { overflow: hidden; width: 100%; position: relative; }
+        .slider-track { display: flex; gap: 20px; animation: slideScroll 45s linear infinite; width: max-content; }
+        .slider-track:hover { animation-play-state: paused; }
+        .slider-track img { width: 340px; height: 240px; object-fit: cover; border-radius: 16px; transition: all 0.4s; flex-shrink: 0; }
+        .slider-track img:hover { transform: scale(1.06) rotate(-0.5deg); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        @keyframes slideScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @media (max-width: 768px) { .slider-track img { width: 270px; height: 190px; } }
+
+        /* Ticker */
+        .ticker-wrap { width: 100%; overflow: hidden; }
+        .ticker { display: flex; white-space: nowrap; will-change: transform; }
+        .ticker-item { display: inline-flex; align-items: center; font-size: 0.8rem; font-weight: 600; padding: 0 1.5rem; flex-shrink: 0; letter-spacing: 0.02em; }
+
+        /* FAQ */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+
+        /* Textarea */
+        textarea { resize: vertical; min-height: 80px; }
+
+        /* Scroll offset */
+        html { scroll-padding-top: 100px; }
+
+        /* Subtle float for decorative elements */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+
+        /* Navbar scroll state */
+        .nav-scrolled { background: rgba(255,255,255,0.98) !important; backdrop-filter: blur(20px) !important; box-shadow: 0 4px 30px rgba(0,0,0,0.08) !important; }
+
+        /* Service card hover line */
+        .service-card::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 4px; background: linear-gradient(90deg, #E5A93C, #C48B28); transition: all 0.4s; transform: translateX(-50%); border-radius: 99px; }
+        .service-card:hover::after { width: 60%; }
+
+        /* Testimonial quote mark */
+        .testimonial-card::before { content: '\201C'; position: absolute; top: -10px; left: 20px; font-size: 80px; font-family: 'Outfit', sans-serif; color: rgba(229,169,60,0.15); font-weight: 900; line-height: 1; pointer-events: none; }
+
+        /* Mobile Bottom Action Bar */
+        .mobile-bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 49;
+            background: rgba(10,37,61,0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(229,169,60,0.2);
+            padding: 10px 12px;
+            padding-bottom: max(10px, env(safe-area-inset-bottom));
+            display: flex;
+            gap: 8px;
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+        }
+        .mobile-bottom-bar.visible { transform: translateY(0); }
+        .mobile-bottom-bar .bar-btn {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            padding: 8px 4px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: all 0.2s;
+            text-decoration: none;
+            min-height: 56px;
+        }
+        .mobile-bottom-bar .bar-btn i { font-size: 18px; }
+        .bar-call { background: linear-gradient(135deg, #E5A93C, #C48B28); color: #0A253D; }
+        .bar-call:hover { box-shadow: 0 0 20px rgba(229,169,60,0.4); }
+        .bar-whatsapp { background: #25D366; color: #fff; }
+        .bar-whatsapp:hover { background: #128C7E; }
+        .bar-email { background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.1); }
+        .bar-email:hover { background: rgba(255,255,255,0.15); }
+        .bar-quote { background: linear-gradient(135deg, #2C6691, #143E62); color: #FFFFFF; border: 1px solid rgba(255,255,255,0.1); }
+        .bar-quote:hover { background: #143E62; }
+        @media (min-width: 768px) { .mobile-bottom-bar { display: none; } }
+
+        /* Process step card */
+        .process-step { position: relative; }
+        .process-step .step-number {
+            width: 56px; height: 56px;
+            background: linear-gradient(135deg, #E5A93C, #C48B28);
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900; font-size: 1.5rem;
+            color: #0A253D;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(229,169,60,0.3);
+        }
+        .process-step .step-line {
+            position: absolute;
+            left: 27px;
+            top: 70px;
+            bottom: -8px;
+            width: 2px;
+            background: linear-gradient(to bottom, #E5A93C, #E2E8F0);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-gold selection:text-brand-navyDark">
+
+    <!-- Desktop Floating Buttons -->
+    <div class="hidden md:flex fixed bottom-6 right-6 z-50 flex-col gap-3 items-center">
+        <a href="tel:07383105066" class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 bg-gradient-to-br from-brand-gold to-brand-goldDark text-brand-navyDark call-float">
+            <i class="fa-solid fa-phone text-xl"></i>
+        </a>
+        <a href="https://wa.me/447383105066" target="_blank" class="w-14 h-14 rounded-2xl bg-[#25D366] text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 whatsapp-float">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Mobile Bottom Action Bar -->
+    <div class="mobile-bottom-bar" id="mobileBottomBar">
+        <a href="tel:07383105066" class="bar-btn bar-call">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call Now</span>
+        </a>
+        <a href="https://wa.me/447383105066" target="_blank" class="bar-btn bar-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+        <a href="mailto:cpjroofing@gmail.com" class="bar-btn bar-email">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email</span>
+        </a>
+        <a href="#consultation" class="bar-btn bar-quote">
+            <i class="fa-solid fa-file-invoice"></i>
+            <span>Free Quote</span>
+        </a>
+    </div>
+
+    <!-- Header (White/Adjustable Background) -->
+    <header id="mainNav" class="bg-white/95 backdrop-blur-xl sticky top-0 z-40 border-b border-brand-border transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <a href="#" class="flex items-center gap-3">
+                    <!-- Original Logo Link -->
+                    <img src="https://demo.brainywebs.com/wp-content/uploads/2026/06/chrome_NXhrZbqCdx-removebg-preview.png" alt="CJP Roofing Logo" class="h-16 md:h-20 w-auto object-contain" onerror="this.style.display='none'">
+                </a>
+                <nav class="hidden lg:flex items-center gap-2 font-heading font-semibold text-sm text-brand-slate">
+                    <a href="#services" class="px-4 py-2 rounded-lg hover:bg-brand-lightBg hover:text-brand-navy transition-all">Services</a>
+                    <a href="#projects" class="px-4 py-2 rounded-lg hover:bg-brand-lightBg hover:text-brand-navy transition-all">Projects</a>
+                    <a href="#reviews" class="px-4 py-2 rounded-lg hover:bg-brand-lightBg hover:text-brand-navy transition-all">Reviews</a>
+                    <a href="#faq" class="px-4 py-2 rounded-lg hover:bg-brand-lightBg hover:text-brand-navy transition-all">FAQ</a>
+                    <a href="#consultation" class="px-4 py-2 rounded-lg hover:bg-brand-lightBg hover:text-brand-navy transition-all">Contact</a>
+                    <a href="tel:07383105066" class="ml-4 btn-primary px-6 py-3 rounded-xl text-sm flex items-center gap-2 shadow-lg shadow-brand-gold/20">
+                        <i class="fa-solid fa-phone text-xs"></i> Get a Quote
+                    </a>
+                </nav>
+                <button id="mobileMenuBtn" class="lg:hidden ml-auto text-brand-navyDark w-10 h-10 flex items-center justify-center rounded-xl hover:bg-brand-lightBg transition">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <line x1="4" y1="6" x2="20" y2="6" stroke-width="2.5"/>
+                        <line x1="8" y1="12" x2="20" y2="12"/>
+                        <line x1="4" y1="18" x2="20" y2="18" stroke-width="2.5"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ticker Bar -->
+    <div class="bg-brand-navyDark text-white/80 py-2.5 text-xs tracking-wide border-b border-brand-accent/20">
+        <div class="ticker-wrap">
+            <div class="ticker" id="ticker">
+                <span class="ticker-item"><i class="fa-solid fa-location-dot text-brand-gold mr-2"></i> Abergavenny & South Wales</span>
+                <span class="ticker-item"><i class="fa-solid fa-hammer text-brand-gold mr-2"></i> Carpentry & Joinery</span>
+                <span class="ticker-item"><i class="fa-solid fa-house-chimney text-brand-gold mr-2"></i> Roofing Experts</span>
+                <span class="ticker-item"><i class="fa-solid fa-utensils text-brand-gold mr-2"></i> Bespoke Kitchens</span>
+                <span class="ticker-item"><i class="fa-solid fa-star text-brand-gold mr-2"></i> 5-Star Rated</span>
+                <span class="ticker-item"><i class="fa-solid fa-envelope text-brand-gold mr-2"></i> cpjroofing@gmail.com</span>
+                <span class="ticker-item"><i class="fa-solid fa-phone text-brand-gold mr-2"></i> 07383 105066</span>
+                <span class="ticker-item"><i class="fa-solid fa-location-dot text-brand-gold mr-2"></i> Abergavenny & South Wales</span>
+                <span class="ticker-item"><i class="fa-solid fa-hammer text-brand-gold mr-2"></i> Carpentry & Joinery</span>
+                <span class="ticker-item"><i class="fa-solid fa-house-chimney text-brand-gold mr-2"></i> Roofing Experts</span>
+                <span class="ticker-item"><i class="fa-solid fa-utensils text-brand-gold mr-2"></i> Bespoke Kitchens</span>
+                <span class="ticker-item"><i class="fa-solid fa-star text-brand-gold mr-2"></i> 5-Star Rated</span>
+                <span class="ticker-item"><i class="fa-solid fa-envelope text-brand-gold mr-2"></i> cpjroofing@gmail.com</span>
+                <span class="ticker-item"><i class="fa-solid fa-phone text-brand-gold mr-2"></i> 07383 105066</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-y-0 right-0 w-80 bg-white shadow-2xl z-50 p-8 border-l border-brand-border">
+        <button id="closeMobileMenu" class="absolute top-5 right-5 w-10 h-10 rounded-xl bg-brand-lightBg flex items-center justify-center text-brand-slate hover:bg-brand-gold hover:text-brand-navyDark transition">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <div class="mt-12 bg-white p-2 rounded-xl inline-block mb-8">
+            <img src="https://demo.brainywebs.com/wp-content/uploads/2026/06/chrome_NXhrZbqCdx-removebg-preview.png" alt="CJP Logo" class="h-14 object-contain" onerror="this.style.display='none'">
+        </div>
+        <nav class="flex flex-col gap-1">
+            <a href="#services" class="text-base font-semibold text-brand-slate hover:text-brand-navy hover:bg-brand-lightBg px-4 py-3 rounded-xl transition">Services</a>
+            <a href="#projects" class="text-base font-semibold text-brand-slate hover:text-brand-navy hover:bg-brand-lightBg px-4 py-3 rounded-xl transition">Projects</a>
+            <a href="#reviews" class="text-base font-semibold text-brand-slate hover:text-brand-navy hover:bg-brand-lightBg px-4 py-3 rounded-xl transition">Reviews</a>
+            <a href="#faq" class="text-base font-semibold text-brand-slate hover:text-brand-navy hover:bg-brand-lightBg px-4 py-3 rounded-xl transition">FAQ</a>
+            <a href="#consultation" class="text-base font-semibold text-brand-slate hover:text-brand-navy hover:bg-brand-lightBg px-4 py-3 rounded-xl transition">Contact</a>
+        </nav>
+        <div class="mt-8 pt-6 border-t border-brand-border">
+            <a href="tel:07383105066" class="flex items-center gap-3 text-brand-navyDark font-bold mb-3 px-4 py-2 hover:text-brand-gold transition"><i class="fa-solid fa-phone text-brand-gold"></i> 07383 105066</a>
+            <a href="https://wa.me/447383105066" class="btn-primary w-full py-3 rounded-xl font-bold text-center flex items-center justify-center gap-2 mt-3"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+    </div>
+    <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 hidden"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[85vh] lg:min-h-screen flex items-end lg:items-center overflow-hidden bg-brand-navyDark">
+            <!-- Background with parallax-style dark overlays -->
+            <div class="absolute inset-0">
+                <img src="https://demo.brainywebs.com/wp-content/uploads/2026/06/471527516_122181202490116220_8307883216078944703_n.jpg" class="w-full h-full object-cover scale-105" alt="Roofing Background">
+                <!-- Multi-layer overlay for depth -->
+                <div class="absolute inset-0 bg-brand-navyDark/85"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-navyDark via-brand-navyDark/70 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-navyDark via-transparent to-brand-navyDark/50"></div>
+            </div>
+
+            <!-- Decorative Elements -->
+            <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-brand-gold/[0.03] to-transparent hidden lg:block"></div>
+            <div class="absolute top-24 right-24 w-80 h-80 rounded-full border border-brand-gold/15 hidden lg:block" style="animation: floatSlow 10s ease-in-out infinite;"></div>
+            <div class="absolute bottom-32 right-48 w-48 h-48 rounded-full border border-brand-gold/[0.1] hidden lg:block" style="animation: floatSlow 7s ease-in-out infinite 2s;"></div>
+            <div class="absolute top-1/2 right-1/4 w-3 h-3 bg-brand-gold/40 rounded-full hidden lg:block" style="animation: floatSlow 5s ease-in-out infinite;"></div>
+            <!-- Diagonal accent line -->
+            <div class="absolute -bottom-20 -left-20 w-[600px] h-[600px] border-l-2 border-b-2 border-brand-gold/15 rounded-bl-full hidden lg:block" style="transform: rotate(-15deg);"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-16 lg:py-0">
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+                    <!-- Left Content -->
+                    <div class="lg:col-span-7" data-aos="fade-right">
+                        <!-- Mini badge -->
+                        <div class="inline-flex items-center gap-3 bg-gradient-to-r from-brand-gold/20 via-brand-gold/5 to-transparent border-l-4 border-brand-gold pl-4 pr-6 py-3 rounded-r-xl text-brand-gold font-semibold text-sm uppercase tracking-wider mb-6" data-aos="fade-right" data-aos-delay="100">
+                            <i class="fa-solid fa-hammer text-brand-gold text-base"></i>
+                            <span>Roofing, Carpentry & Joinery</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-black text-white leading-[1.05] mb-6">
+                            Abergavenny's Trusted<br>
+                            <span class="relative inline-block">
+                                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-white to-brand-gold">Property Experts.</span>
+                                <span class="absolute -bottom-2 left-0 w-full h-1.5 bg-gradient-to-r from-brand-gold to-brand-goldDark rounded-full"></span>
+                            </span>
+                        </h1>
+
+                        <p class="text-white/70 text-base md:text-lg mb-10 leading-relaxed max-w-lg">
+                            From complete roofing replacements to bespoke kitchen fitting and tailored carpentry. Premium craftsmanship serving Abergavenny, Ebbw Vale, and surrounding areas.
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                            <a href="tel:07383105066" class="btn-primary px-8 py-4 rounded-2xl text-base font-bold flex items-center justify-center gap-3 group">
+                                <span class="w-8 h-8 bg-black/10 rounded-lg flex items-center justify-center group-hover:bg-black/20 transition"><i class="fa-solid fa-phone text-sm"></i></span>
+                                Call 07383 105066
+                            </a>
+                            <a href="https://wa.me/447383105066" class="border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/40 px-8 py-4 rounded-2xl text-base font-bold flex items-center justify-center gap-3 transition-all duration-300">
+                                <i class="fa-brands fa-whatsapp text-xl text-[#25D366]"></i> Message Us
+                            </a>
+                        </div>
+
+                        <!-- Trust Stats Row -->
+                        <div class="grid grid-cols-3 gap-4 max-w-md">
+                            <div class="bg-white/[0.04] border border-white/[0.06] rounded-2xl p-4 text-center backdrop-blur-sm">
+                                <div class="text-2xl font-heading font-black text-brand-gold">5★</div>
+                                <p class="text-white/50 text-xs mt-1">Rated</p>
+                            </div>
+                            <div class="bg-white/[0.04] border border-white/[0.06] rounded-2xl p-4 text-center backdrop-blur-sm">
+                                <div class="text-2xl font-heading font-black text-brand-gold">100%</div>
+                                <p class="text-white/50 text-xs mt-1">Bespoke</p>
+                            </div>
+                            <div class="bg-white/[0.04] border border-white/[0.06] rounded-2xl p-4 text-center backdrop-blur-sm">
+                                <div class="text-2xl font-heading font-black text-brand-gold">Fast</div>
+                                <p class="text-white/50 text-xs mt-1">Response</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Quote Form -->
+                    <div class="lg:col-span-5" data-aos="fade-left" data-aos-delay="200">
+                        <div class="relative">
+                            <!-- Glow behind card -->
+                            <div class="absolute -inset-4 bg-gradient-to-br from-brand-gold/30 via-brand-gold/10 to-transparent rounded-[2rem] blur-2xl hidden lg:block"></div>
+                            <div class="relative bg-white/[0.97] backdrop-blur-xl rounded-3xl p-8 shadow-2xl shadow-black/30 border border-white/20">
+                                <!-- Form Header -->
+                                <div class="flex items-center gap-3 mb-1">
+                                    <div class="w-11 h-11 bg-gradient-to-br from-brand-gold to-brand-goldDark rounded-xl flex items-center justify-center shadow-md shadow-brand-gold/20">
+                                        <i class="fa-solid fa-file-invoice text-brand-navyDark"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-heading font-bold text-brand-navyDark leading-tight">Get Your Free Quote</h3>
+                                        <p class="text-xs text-brand-muted">No obligation — just honest advice</p>
+                                    </div>
+                                </div>
+
+                                <div class="w-full h-px bg-gradient-to-r from-brand-gold/40 via-brand-border to-transparent my-5"></div>
+
+                                <form id="quoteForm" onsubmit="event.preventDefault(); handleQuoteSubmit();">
+                                    <div class="relative mb-3">
+                                        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-muted"><i class="fa-solid fa-user text-sm"></i></span>
+                                        <input type="text" name="name" placeholder="Your Name" required class="w-full pl-10 pr-4 py-3 bg-brand-lightBg border border-brand-border rounded-xl font-medium text-sm transition focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:bg-white">
+                                    </div>
+                                    <div class="relative mb-3">
+                                        <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-muted"><i class="fa-solid fa-location-dot text-sm"></i></span>
+                                        <input type="text" name="location" placeholder="Your Location" required class="w-full pl-10 pr-4 py-3 bg-brand-lightBg border border-brand-border rounded-xl font-medium text-sm transition focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:bg-white">
+                                    </div>
+                                    <div class="relative mb-4">
+                                        <span class="absolute left-3.5 top-4 text-brand-muted"><i class="fa-solid fa-tools text-sm"></i></span>
+                                        <textarea name="details" placeholder="Project Details (e.g. new roof, kitchen fitting, carpentry...)" required rows="3" class="w-full pl-10 pr-4 py-3 bg-brand-lightBg border border-brand-border rounded-xl font-medium text-sm transition focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:bg-white resize-vertical min-h-[80px]"></textarea>
+                                    </div>
+                                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 text-brand-navyDark bg-gradient-to-r from-brand-gold to-brand-goldDark hover:shadow-lg hover:shadow-brand-gold/30 transform hover:-translate-y-0.5 transition-all duration-300">
+                                        <i class="fa-brands fa-whatsapp text-lg"></i> Request Free Quote
+                                    </button>
+                                </form>
+                                <p class="text-center text-xs text-brand-muted mt-4">By submitting my data I agree to be contacted.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom edge curve -->
+            <div class="absolute bottom-0 left-0 right-0">
+                <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                    <path d="M0 60L1440 60L1440 20C1200 0 960 40 720 30C480 20 240 50 0 20L0 60Z" fill="#FFFFFF"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Emergency Banner -->
+        <section class="py-6 bg-gradient-to-r from-brand-goldDark via-brand-gold to-brand-goldDark relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMTBoNDBNMTAgMHY0ME0wIDIwaDQwTTIwIDB2NDBNMCAzMGg0ME0zMCAwdjQwIiBzdHJva2U9InJnYmEoMCwwLDAsMC4wNSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNhKSIvPjwvc3ZnPg==')] opacity-40"></div>
+            <div class="max-w-7xl mx-auto px-4 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-5 text-center md:text-left">
+                    <div class="flex-shrink-0 w-12 h-12 bg-brand-navyDark rounded-full flex items-center justify-center">
+                        <i class="fa-solid fa-house-crack text-brand-gold text-xl animate-pulse"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-heading font-bold text-brand-navyDark mb-1">Roofing & Property Repairs Available</h3>
+                        <p class="text-brand-navyDark/80">Storm damage or interior fitting needs? We respond fast to help you build and protect.</p>
+                    </div>
+                    <a href="tel:07383105066" class="flex-shrink-0 bg-brand-navyDark text-white hover:bg-brand-navy px-7 py-3.5 rounded-xl font-bold flex items-center gap-2 transition shadow-lg">
+                        <i class="fa-solid fa-phone animate-bounce"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="bg-brand-navyDark py-14 relative overflow-hidden border-b border-brand-accent/20">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-gold rounded-full filter blur-3xl"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div data-aos="fade-up">
+                        <div class="text-4xl md:text-5xl font-heading font-black text-brand-gold mb-2">100s</div>
+                        <p class="text-white/60 font-medium text-sm uppercase tracking-wider">Projects Completed</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="text-4xl md:text-5xl font-heading font-black text-brand-gold mb-2">100%</div>
+                        <p class="text-white/60 font-medium text-sm uppercase tracking-wider">Satisfaction Goal</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="text-4xl md:text-5xl font-heading font-black text-brand-gold mb-2">5★</div>
+                        <p class="text-white/60 font-medium text-sm uppercase tracking-wider">Client Reviews</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <div class="text-4xl md:text-5xl font-heading font-black text-brand-gold mb-2">Fast</div>
+                        <p class="text-white/60 font-medium text-sm uppercase tracking-wider">Message Response</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-24 bg-brand-warmWhite relative">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="inline-block bg-brand-gold/15 text-brand-goldDark font-semibold px-4 py-1.5 rounded-full text-sm mb-4">Why Us</span>
+                    <h2 class="text-3xl md:text-5xl font-heading font-black text-brand-navyDark mb-4">Why Wales Trusts CJP</h2>
+                    <p class="text-brand-muted text-lg max-w-2xl mx-auto">We bring multi-trade expertise across Abergavenny — from securing your roof to crafting bespoke kitchens.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-8 rounded-2xl border border-brand-border hover:border-brand-gold/50 hover:shadow-xl hover:shadow-brand-gold/10 transition-all duration-400 group" data-aos="fade-up">
+                        <div class="w-14 h-14 bg-brand-gold/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-brand-gold group-hover:scale-110 transition-all duration-300">
+                            <i class="fa-solid fa-hammer text-2xl text-brand-gold group-hover:text-white transition-all"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-2">Multi-Trade Experts</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">Highly skilled in both heavy roofing and intricate carpentry & joinery.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-brand-border hover:border-brand-gold/50 hover:shadow-xl hover:shadow-brand-gold/10 transition-all duration-400 group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 bg-brand-gold/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-brand-gold group-hover:scale-110 transition-all duration-300">
+                            <i class="fa-solid fa-shield-halved text-2xl text-brand-gold group-hover:text-white transition-all"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-2">Uncompromised Quality</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">Whether it’s a total re-roof or custom kitchen fit, we build to last.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-brand-border hover:border-brand-gold/50 hover:shadow-xl hover:shadow-brand-gold/10 transition-all duration-400 group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 bg-brand-gold/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-brand-gold group-hover:scale-110 transition-all duration-300">
+                            <i class="fa-solid fa-comments text-2xl text-brand-gold group-hover:text-white transition-all"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-2">Free Consultation</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">Always happy to advise on your project and provide free, transparent quotes.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-brand-border hover:border-brand-gold/50 hover:shadow-xl hover:shadow-brand-gold/10 transition-all duration-400 group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-14 h-14 bg-brand-gold/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-brand-gold group-hover:scale-110 transition-all duration-300">
+                            <i class="fa-solid fa-location-dot text-2xl text-brand-gold group-hover:text-white transition-all"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-2">Local to Abergavenny</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">Proudly serving Abergavenny, Ebbw Vale, Torfaen, and Monmouth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-brand-lightBg relative">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="inline-block bg-brand-gold/15 text-brand-goldDark font-semibold px-4 py-1.5 rounded-full text-sm mb-4">What We Do</span>
+                    <h2 class="text-3xl md:text-5xl font-heading font-black text-brand-navyDark mb-4">Comprehensive Property Solutions</h2>
+                    <p class="text-brand-muted max-w-2xl mx-auto">From weatherproofing your exterior to perfecting your interior spaces.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="service-card bg-white p-8 rounded-2xl border border-brand-border hover:shadow-xl transition-all duration-400 relative overflow-hidden group" data-aos="fade-up">
+                        <div class="w-14 h-14 bg-brand-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-brand-navy/20">
+                            <i class="fa-solid fa-house-chimney text-xl text-brand-gold"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-3">Roofing Replacements</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">Complete new roofs and full re-roofs. We install slates, tiles, and flat roofing systems to secure your property for decades.</p>
+                    </div>
+                    <div class="service-card bg-white p-8 rounded-2xl border border-brand-border hover:shadow-xl transition-all duration-400 relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 bg-brand-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-brand-navy/20">
+                            <i class="fa-solid fa-wrench text-xl text-brand-gold"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-3">Roof Repairs & Maintenance</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">From replacing cracked tiles to repairing leaks and lead work, we offer prompt, effective repairs to prevent further damage.</p>
+                    </div>
+                    <div class="service-card bg-white p-8 rounded-2xl border border-brand-border hover:shadow-xl transition-all duration-400 relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 bg-brand-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-brand-navy/20">
+                            <i class="fa-solid fa-water text-xl text-brand-gold"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-3">Fascias, Soffits & Guttering</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">Upgrade and protect your roofline with durable UPVC fascias, soffits, and full guttering replacements for proper drainage.</p>
+                    </div>
+                    <div class="service-card bg-white p-8 rounded-2xl border border-brand-border hover:shadow-xl transition-all duration-400 relative overflow-hidden group" data-aos="fade-up">
+                        <div class="w-14 h-14 bg-brand-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-brand-navy/20">
+                            <i class="fa-solid fa-hammer text-xl text-brand-gold"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-3">Carpentry & Joinery</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">All aspects of internal and external carpentry. From structural joist work to beautiful finishing joinery tailored to your home.</p>
+                    </div>
+                    <div class="service-card bg-white p-8 rounded-2xl border border-brand-border hover:shadow-xl transition-all duration-400 relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 bg-brand-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-brand-navy/20">
+                            <i class="fa-solid fa-utensils text-xl text-brand-gold"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-3">Bespoke Kitchen Fitting</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">Transform your living space with our expert kitchen fitting service. We handle the carpentry, installation, and flawless finishing.</p>
+                    </div>
+                    <div class="service-card bg-white p-8 rounded-2xl border border-brand-border hover:shadow-xl transition-all duration-400 relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 bg-brand-navy rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-brand-navy/20">
+                            <i class="fa-solid fa-clipboard-check text-xl text-brand-gold"></i>
+                        </div>
+                        <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-3">General Property Maintenance</h3>
+                        <p class="text-brand-muted text-sm leading-relaxed">A comprehensive approach to home care. Rely on our versatile skill set to keep your property functioning and looking its best.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="py-24 bg-brand-cream">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="inline-block bg-brand-gold/15 text-brand-goldDark font-semibold px-4 py-1.5 rounded-full text-sm mb-4">Our Process</span>
+                    <h2 class="text-3xl md:text-5xl font-heading font-black text-brand-navyDark mb-4">Simple, Transparent, Stress-Free.</h2>
+                    <p class="text-brand-muted text-lg max-w-2xl mx-auto">From the first call to the final polish, here's how we deliver excellence.</p>
+                </div>
+
+                <div class="max-w-3xl mx-auto space-y-0">
+                    <!-- Step 1 -->
+                    <div class="process-step flex gap-5 md:gap-8 relative" data-aos="fade-up">
+                        <div class="step-line"></div>
+                        <div class="step-number">1</div>
+                        <div class="pb-8">
+                            <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-1">Get in Touch</h3>
+                            <p class="text-brand-muted text-sm leading-relaxed">Call or WhatsApp us with your roofing, carpentry, or kitchen requirements.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="process-step flex gap-5 md:gap-8 relative" data-aos="fade-up" data-aos-delay="80">
+                        <div class="step-line"></div>
+                        <div class="step-number">2</div>
+                        <div class="pb-8">
+                            <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-1">Free Inspection & Quote</h3>
+                            <p class="text-brand-muted text-sm leading-relaxed">We assess the work on-site, take measurements, and provide an honest, detailed quote.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="process-step flex gap-5 md:gap-8 relative" data-aos="fade-up" data-aos-delay="160">
+                        <div class="step-line"></div>
+                        <div class="step-number">3</div>
+                        <div class="pb-8">
+                            <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-1">Clear Proposal & Timeline</h3>
+                            <p class="text-brand-muted text-sm leading-relaxed">Transparent pricing and scheduling — everything is agreed upon before tools are lifted.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="process-step flex gap-5 md:gap-8 relative" data-aos="fade-up" data-aos-delay="240">
+                        <div class="step-line"></div>
+                        <div class="step-number">4</div>
+                        <div class="pb-8">
+                            <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-1">Expert Craftsmanship</h3>
+                            <p class="text-brand-muted text-sm leading-relaxed">Our skilled team completes the job using premium materials, maintaining a clean and safe site.</p>
+                        </div>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="process-step flex gap-5 md:gap-8 relative" data-aos="fade-up" data-aos-delay="320">
+                        <div class="step-number">5</div>
+                        <div class="pb-8">
+                            <h3 class="text-lg font-heading font-bold text-brand-navyDark mb-1">Final Walkthrough</h3>
+                            <p class="text-brand-muted text-sm leading-relaxed">We clear all waste and walk through the finished project with you to ensure 100% satisfaction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA after process -->
+                <div class="text-center mt-12" data-aos="fade-up">
+                    <a href="#consultation" class="btn-primary px-8 py-4 rounded-2xl text-lg inline-flex items-center gap-3">
+                        <i class="fa-solid fa-file-invoice"></i> Start With a Free Quote
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 bg-brand-navyDark relative overflow-hidden border-y border-brand-accent/20">
+            <div class="absolute top-0 left-0 w-64 h-64 bg-brand-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-80 h-80 bg-brand-gold/10 rounded-full blur-3xl"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
+                <span class="inline-block bg-white/10 text-brand-gold font-semibold px-4 py-1.5 rounded-full text-sm mb-4 border border-brand-gold/20">Portfolio</span>
+                <h2 class="text-3xl md:text-5xl font-heading font-black text-white mb-4">Work Gallery</h2>
+                <p class="text-white/60 max-w-xl mx-auto mb-12">Real homes, real results. See the quality we deliver on every job across South Wales.</p>
+
+                <div class="slider-container rounded-2xl">
+                    <div class="slider-track" id="projectSlider">
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/03/roof3.jpeg" alt="Roofing Project 1" loading="lazy">
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/03/roof2.jpg" alt="Roofing Project 2" loading="lazy">
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/06/706841216_949132154834315_5140542949179655774_n.jpg" alt="Roofing Project 4" loading="lazy">
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/03/roof6.jpg" alt="Roofing Project 6" loading="lazy">
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/06/471527516_122181202490116220_8307883216078944703_n.jpg" alt="Roofing Project 8" loading="lazy">
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/02/fixScreenshot-2026-02-18-113912.jpg" alt="Roofing Project 9" loading="lazy">
+
+                        <!-- Duplicated for seamless loop -->
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/03/roof3.jpeg" alt="Roofing Project 1" loading="lazy">
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/03/roof2.jpg" alt="Roofing Project 2" loading="lazy">
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/06/706841216_949132154834315_5140542949179655774_n.jpg" alt="Roofing Project 4" loading="lazy">
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/03/roof6.jpg" alt="Roofing Project 6" loading="lazy">
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/06/471527516_122181202490116220_8307883216078944703_n.jpg" alt="Roofing Project 8" loading="lazy">
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/02/fixScreenshot-2026-02-18-113912.jpg" alt="Roofing Project 9" loading="lazy">
+                    </div>
+                </div>
+
+                <div class="mt-10">
+                    <a href="#" target="_blank" class="inline-flex items-center gap-3 text-white/70 hover:text-white font-semibold transition group">
+                        <span class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-brand-gold group-hover:text-brand-navyDark transition">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </span>
+                        View More on Facebook
+                        <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Storm Warning Section with Umbrella Rain Canvas -->
+        <section id="rain-section" class="relative py-16 md:py-20 bg-gradient-to-b from-brand-navyDark to-[#04121f] overflow-hidden border-t-4 border-brand-gold text-center cursor-crosshair">
+            <canvas id="rainCanvas" class="absolute inset-0 z-0"></canvas>
+
+            <div id="cursor-umbrella" class="absolute pointer-events-none z-20 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 transform -translate-x-1/2 -translate-y-1/2">
+                <i class="fa-solid fa-umbrella text-5xl md:text-7xl text-brand-gold drop-shadow-[0_0_20px_rgba(229,169,60,0.7)]"></i>
+                <div class="text-white font-bold mt-2 tracking-widest text-[9px] uppercase bg-brand-navyDark/90 px-3 py-1.5 rounded text-center leading-tight border border-brand-gold/30">
+                    <div>Protected</div>
+                    <div>By CJP</div>
+                </div>
+            </div>
+
+            <div class="relative z-10 max-w-4xl mx-auto px-4 pointer-events-none" data-aos="zoom-in">
+                <div class="w-16 h-16 bg-brand-gold/10 backdrop-blur-md rounded-2xl flex items-center justify-center text-brand-gold text-3xl mx-auto mb-5 shadow-[0_0_30px_rgba(229,169,60,0.15)] border border-brand-gold/20">
+                    <i class="fa-solid fa-cloud-showers-water"></i>
+                </div>
+                
+                <h2 class="text-3xl md:text-5xl font-heading font-black text-white mb-4 leading-[1.1] tracking-tight">
+                    Don't Let A Small Leak<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-white to-brand-gold">Become A Big Bill.</span>
+                </h2>
+                <p class="text-white/60 text-base md:text-lg mb-2 max-w-lg mx-auto font-medium">
+                    Water damage doesn't wait. Secure your property with Wales' trusted experts before costs escalate.
+                </p>
+                <p class="text-brand-gold/60 text-[10px] mb-8 uppercase tracking-widest font-bold">Move your cursor to test our protection</p>
+
+                <div class="grid grid-cols-3 gap-3 max-w-md mx-auto mb-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-sm hover:border-brand-gold/30 transition-colors">
+                        <div class="text-xl md:text-2xl font-heading font-black text-brand-gold mb-0.5">73%</div>
+                        <p class="text-white/50 text-[10px] uppercase tracking-wide">Find Leaks Late</p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-sm hover:border-brand-gold/30 transition-colors">
+                        <div class="text-xl md:text-2xl font-heading font-black text-brand-gold mb-0.5">£8K+</div>
+                        <p class="text-white/50 text-[10px] uppercase tracking-wide">Avg. Damage Cost</p>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-3 backdrop-blur-sm hover:border-brand-gold/30 transition-colors">
+                        <div class="text-xl md:text-2xl font-heading font-black text-brand-gold mb-0.5">2x</div>
+                        <p class="text-white/50 text-[10px] uppercase tracking-wide">Cheaper Now</p>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <a href="#consultation" class="pointer-events-auto inline-flex items-center gap-3 bg-gradient-to-r from-brand-gold to-brand-goldDark text-brand-navyDark font-bold px-8 py-3.5 rounded-xl shadow-[0_0_20px_rgba(229,169,60,0.3)] hover:shadow-[0_0_30px_rgba(229,169,60,0.5)] transform hover:-translate-y-1 transition-all duration-300">
+                        <i class="fa-solid fa-shield-halved text-lg"></i>
+                        <span class="text-base">Protect Your Home</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section (Strictly 3 Reviews) -->
+        <section id="reviews" class="py-24 bg-brand-lightBg">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="inline-block bg-brand-gold/15 text-brand-goldDark font-semibold px-4 py-1.5 rounded-full text-sm mb-4">Testimonials</span>
+                    <h2 class="text-3xl md:text-5xl font-heading font-black text-brand-navyDark mb-4">What Our Clients Say</h2>
+                    <p class="text-brand-muted max-w-xl mx-auto">Real feedback from real customers across Abergavenny and the surrounding areas.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="testimonial-card relative bg-white p-6 rounded-2xl border border-brand-border hover:shadow-lg hover:border-brand-gold/30 transition-all duration-300" data-aos="fade-up">
+                        <div class="flex text-brand-gold mb-4 gap-0.5 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-brand-slate text-sm leading-relaxed mb-5">"CJP Roofing did a fantastic job on our property in Abergavenny. New felt and battens, membrane, and the new dry verge system looks perfect. Highly recommended."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                            <div class="w-9 h-9 bg-brand-navy/10 rounded-full flex items-center justify-center"><i class="fa-brands fa-facebook text-brand-navy text-sm"></i></div>
+                            <div><p class="text-brand-navyDark font-bold text-sm">Sarah M.</p><p class="text-brand-muted text-xs">Abergavenny</p></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card relative bg-white p-6 rounded-2xl border border-brand-border hover:shadow-lg hover:border-brand-gold/30 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex text-brand-gold mb-4 gap-0.5 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-brand-slate text-sm leading-relaxed mb-5">"Incredible carpentry work by CJP! They completely redesigned and fitted our bespoke kitchen. Left the place spotless and the finishing detail is immaculate. Great service."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                            <div class="w-9 h-9 bg-brand-navy/10 rounded-full flex items-center justify-center"><i class="fa-brands fa-facebook text-brand-navy text-sm"></i></div>
+                            <div><p class="text-brand-navyDark font-bold text-sm">James T.</p><p class="text-brand-muted text-xs">Ebbw Vale</p></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card relative bg-white p-6 rounded-2xl border border-brand-border hover:shadow-lg hover:border-brand-gold/30 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex text-brand-gold mb-4 gap-0.5 text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="text-brand-slate text-sm leading-relaxed mb-5">"Needed a full re-roof and they came through brilliantly. Professional from the first quote to the final cleanup. You can tell they take pride in what they do."</p>
+                        <div class="flex items-center gap-3 pt-4 border-t border-brand-border">
+                            <div class="w-9 h-9 bg-brand-navy/10 rounded-full flex items-center justify-center"><i class="fa-brands fa-facebook text-brand-navy text-sm"></i></div>
+                            <div><p class="text-brand-navyDark font-bold text-sm">David R.</p><p class="text-brand-muted text-xs">Torfaen</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="#" target="_blank" class="inline-flex items-center gap-3 text-brand-navyDark hover:text-brand-goldDark font-semibold transition group">
+                        <span class="w-10 h-10 bg-brand-gold/20 rounded-full flex items-center justify-center group-hover:bg-brand-gold group-hover:text-white transition">
+                            <i class="fa-brands fa-facebook-f text-brand-goldDark group-hover:text-white"></i>
+                        </span>
+                        Read More Reviews on Facebook
+                        <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-24 bg-brand-warmWhite">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="text-center mb-14" data-aos="fade-up">
+                    <span class="inline-block bg-brand-gold/15 text-brand-goldDark font-semibold px-4 py-1.5 rounded-full text-sm mb-4">Common Questions</span>
+                    <h2 class="text-3xl md:text-5xl font-heading font-black text-brand-navyDark mb-4">Got Questions? We've Got Answers.</h2>
+                    <p class="text-brand-muted max-w-lg mx-auto">Everything you need to know before starting a project with CJP Roofing.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4" data-aos="fade-up">
+                    <details class="group bg-white rounded-2xl overflow-hidden border border-brand-border hover:shadow-lg hover:border-brand-gold/30 transition-all duration-300">
+                        <summary class="flex items-start gap-4 font-heading font-semibold p-6 text-brand-navyDark cursor-pointer">
+                            <span class="w-10 h-10 bg-brand-gold/15 rounded-xl flex items-center justify-center flex-shrink-0 transition group-open:bg-brand-gold group-open:text-white text-brand-goldDark mt-0.5">
+                                <i class="fa-solid fa-plus text-sm group-open:hidden"></i>
+                                <i class="fa-solid fa-minus text-sm hidden group-open:block"></i>
+                            </span>
+                            <span>Do you offer free quotes?</span>
+                        </summary>
+                        <div class="px-6 pb-6 pl-20 text-brand-muted text-sm leading-relaxed">
+                            Yes, we provide comprehensive, non-obligatory free quotes and estimates for all types of roofing, carpentry, and kitchen fitting work.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-2xl overflow-hidden border border-brand-border hover:shadow-lg hover:border-brand-gold/30 transition-all duration-300">
+                        <summary class="flex items-start gap-4 font-heading font-semibold p-6 text-brand-navyDark cursor-pointer">
+                            <span class="w-10 h-10 bg-brand-gold/15 rounded-xl flex items-center justify-center flex-shrink-0 transition group-open:bg-brand-gold group-open:text-white text-brand-goldDark mt-0.5">
+                                <i class="fa-solid fa-plus text-sm group-open:hidden"></i>
+                                <i class="fa-solid fa-minus text-sm hidden group-open:block"></i>
+                            </span>
+                            <span>Do you handle both carpentry and roofing?</span>
+                        </summary>
+                        <div class="px-6 pb-6 pl-20 text-brand-muted text-sm leading-relaxed">
+                            Absolutely. We are highly trained in both sectors. Whether you need an emergency roof repair or a bespoke kitchen fitted, our multi-skilled team delivers the highest standards.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-2xl overflow-hidden border border-brand-border hover:shadow-lg hover:border-brand-gold/30 transition-all duration-300">
+                        <summary class="flex items-start gap-4 font-heading font-semibold p-6 text-brand-navyDark cursor-pointer">
+                            <span class="w-10 h-10 bg-brand-gold/15 rounded-xl flex items-center justify-center flex-shrink-0 transition group-open:bg-brand-gold group-open:text-white text-brand-goldDark mt-0.5">
+                                <i class="fa-solid fa-plus text-sm group-open:hidden"></i>
+                                <i class="fa-solid fa-minus text-sm hidden group-open:block"></i>
+                            </span>
+                            <span>What areas do you cover?</span>
+                        </summary>
+                        <div class="px-6 pb-6 pl-20 text-brand-muted text-sm leading-relaxed">
+                            We are based in Abergavenny and serve all surrounding areas in Wales, including Ebbw Vale, Torfaen, Usk, Monmouth, and Blaenau Gwent.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-2xl overflow-hidden border border-brand-border hover:shadow-lg hover:border-brand-gold/30 transition-all duration-300">
+                        <summary class="flex items-start gap-4 font-heading font-semibold p-6 text-brand-navyDark cursor-pointer">
+                            <span class="w-10 h-10 bg-brand-gold/15 rounded-xl flex items-center justify-center flex-shrink-0 transition group-open:bg-brand-gold group-open:text-white text-brand-goldDark mt-0.5">
+                                <i class="fa-solid fa-plus text-sm group-open:hidden"></i>
+                                <i class="fa-solid fa-minus text-sm hidden group-open:block"></i>
+                            </span>
+                            <span>Do you handle emergency roof repairs?</span>
+                        </summary>
+                        <div class="px-6 pb-6 pl-20 text-brand-muted text-sm leading-relaxed">
+                            Yes, we understand that storm damage doesn't operate on a 9-5 schedule. Contact us for rapid response emergency repairs to secure your property.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Areas Section -->
+        <section class="py-20 bg-brand-cream">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="inline-block bg-brand-gold/15 text-brand-goldDark font-semibold px-4 py-1.5 rounded-full text-sm mb-4">Coverage</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navyDark mb-4">Areas We Serve</h2>
+                    <p class="text-brand-muted text-lg max-w-2xl mx-auto">Proudly serving local communities across South Wales with premium property services.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-3" data-aos="fade-up">
+                    <span class="px-6 py-3 bg-white border border-brand-border rounded-full font-semibold text-brand-navyDark hover:bg-brand-gold hover:border-brand-gold transition cursor-default text-sm shadow-sm"><i class="fa-solid fa-location-dot text-brand-gold mr-2 group-hover:text-brand-navyDark"></i>Abergavenny</span>
+                    <span class="px-6 py-3 bg-white border border-brand-border rounded-full font-semibold text-brand-navyDark hover:bg-brand-gold hover:border-brand-gold transition cursor-default text-sm shadow-sm"><i class="fa-solid fa-location-dot text-brand-gold mr-2 group-hover:text-brand-navyDark"></i>Ebbw Vale</span>
+                    <span class="px-6 py-3 bg-white border border-brand-border rounded-full font-semibold text-brand-navyDark hover:bg-brand-gold hover:border-brand-gold transition cursor-default text-sm shadow-sm"><i class="fa-solid fa-location-dot text-brand-gold mr-2 group-hover:text-brand-navyDark"></i>Torfaen</span>
+                    <span class="px-6 py-3 bg-white border border-brand-border rounded-full font-semibold text-brand-navyDark hover:bg-brand-gold hover:border-brand-gold transition cursor-default text-sm shadow-sm"><i class="fa-solid fa-location-dot text-brand-gold mr-2 group-hover:text-brand-navyDark"></i>Usk</span>
+                    <span class="px-6 py-3 bg-white border border-brand-border rounded-full font-semibold text-brand-navyDark hover:bg-brand-gold hover:border-brand-gold transition cursor-default text-sm shadow-sm"><i class="fa-solid fa-location-dot text-brand-gold mr-2 group-hover:text-brand-navyDark"></i>Monmouth</span>
+                    <span class="px-6 py-3 bg-white border border-brand-border rounded-full font-semibold text-brand-navyDark hover:bg-brand-gold hover:border-brand-gold transition cursor-default text-sm shadow-sm"><i class="fa-solid fa-location-dot text-brand-gold mr-2 group-hover:text-brand-navyDark"></i>Blaenau Gwent</span>
+                    <a href="tel:07383105066" class="px-6 py-3 bg-brand-gold text-brand-navyDark rounded-full font-semibold hover:scale-105 transition cursor-default text-sm inline-flex items-center gap-2 shadow-lg shadow-brand-gold/30">
+                        <i class="fa-solid fa-phone"></i> Call to Check Your Area
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="py-20 bg-brand-lightBg">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="inline-block bg-brand-gold/15 text-brand-goldDark font-semibold px-4 py-1.5 rounded-full text-sm mb-4">Location</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-black text-brand-navyDark mb-4">Find Us in Wales</h2>
+                    <p class="text-brand-muted text-lg max-w-2xl mx-auto">Serving Abergavenny and surrounding areas with professional roofing and carpentry.</p>
+                </div>
+                <div class="rounded-3xl overflow-hidden shadow-xl border border-brand-border" data-aos="fade-up">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39589.65992929285!2d-3.0450534571991054!3d51.823677699192476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871dd82fc604473%3A0xc391b1fa1f114620!2sAbergavenny%2C%20UK!5e0!3m2!1sen!2s!4v1717654321098!5m2!1sen!2s"
+                        width="100%"
+                        height="400"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="CJP Roofing Service Area - Abergavenny">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="consultation" class="relative overflow-hidden">
+            <!-- Top half: dark background with heading -->
+            <div class="bg-brand-navyDark pt-24 pb-32 relative">
+                <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-gold/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
+                <div class="relative z-10 max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
+                    <span class="inline-flex items-center gap-2 bg-brand-gold/10 border border-brand-gold/20 text-brand-gold font-semibold px-5 py-2 rounded-full text-sm mb-6">
+                        <span class="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></span>
+                        Get in Touch
+                    </span>
+                    <h2 class="text-4xl md:text-6xl font-heading font-black text-white mb-4">Let's Build & Protect</h2>
+                    <p class="text-white/60 text-lg max-w-xl mx-auto">Contact us today for free advice and a non-obligatory quote. We respond fast.</p>
+                </div>
+            </div>
+
+            <!-- Bottom half: overlapping card -->
+            <div class="bg-brand-cream pb-8">
+                <div class="max-w-6xl mx-auto px-4 -mt-24 relative z-20">
+                    <div class="bg-white rounded-3xl shadow-2xl shadow-black/10 border border-brand-border overflow-hidden" data-aos="fade-up">
+                        <div class="grid lg:grid-cols-5">
+                            <!-- Left: Contact Form -->
+                            <div class="lg:col-span-3 p-8 md:p-12">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-10 h-10 bg-brand-gold/20 rounded-xl flex items-center justify-center"><i class="fa-solid fa-paper-plane text-brand-goldDark"></i></div>
+                                    <h3 class="text-xl font-heading font-bold text-brand-navyDark">Send Us a Message</h3>
+                                </div>
+                                <p class="text-brand-muted text-sm mb-8">Fill out the form and we'll get back to you via WhatsApp within the hour.</p>
+                                <form id="contactForm" onsubmit="event.preventDefault(); handleContactSubmit();">
+                                    <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                        <div class="relative">
+                                            <label class="block text-xs font-semibold text-brand-slate mb-1.5 uppercase tracking-wider">Your Name</label>
+                                            <div class="relative">
+                                                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-muted"><i class="fa-solid fa-user text-sm"></i></span>
+                                                <input type="text" name="contact_name" placeholder="John Smith" required class="w-full pl-10 pr-4 py-3 bg-brand-lightBg border border-brand-border rounded-xl font-medium text-sm transition focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:bg-white">
+                                            </div>
+                                        </div>
+                                        <div class="relative">
+                                            <label class="block text-xs font-semibold text-brand-slate mb-1.5 uppercase tracking-wider">Your Location</label>
+                                            <div class="relative">
+                                                <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-muted"><i class="fa-solid fa-location-dot text-sm"></i></span>
+                                                <input type="text" name="contact_location" placeholder="Abergavenny" required class="w-full pl-10 pr-4 py-3 bg-brand-lightBg border border-brand-border rounded-xl font-medium text-sm transition focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:bg-white">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="relative mb-4">
+                                        <label class="block text-xs font-semibold text-brand-slate mb-1.5 uppercase tracking-wider">Service Needed</label>
+                                        <div class="relative">
+                                            <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-brand-muted"><i class="fa-solid fa-wrench text-sm"></i></span>
+                                            <select name="contact_service" class="w-full pl-10 pr-4 py-3 bg-brand-lightBg border border-brand-border rounded-xl font-medium text-sm transition focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:bg-white appearance-none cursor-pointer">
+                                                <option value="">Select a service...</option>
+                                                <option>Roofing Replacements & Repairs</option>
+                                                <option>Fascias, Soffits & Guttering</option>
+                                                <option>Carpentry & Joinery</option>
+                                                <option>Bespoke Kitchen Fitting</option>
+                                                <option>General Property Maintenance</option>
+                                                <option>Emergency Repair</option>
+                                                <option>Other</option>
+                                            </select>
+                                            <span class="absolute right-3.5 top-1/2 -translate-y-1/2 text-brand-muted pointer-events-none"><i class="fa-solid fa-chevron-down text-xs"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="relative mb-6">
+                                        <label class="block text-xs font-semibold text-brand-slate mb-1.5 uppercase tracking-wider">Project Details</label>
+                                        <div class="relative">
+                                            <span class="absolute left-3.5 top-4 text-brand-muted"><i class="fa-solid fa-message text-sm"></i></span>
+                                            <textarea name="contact_details" placeholder="Tell us about your project..." required rows="4" class="w-full pl-10 pr-4 py-3 bg-brand-lightBg border border-brand-border rounded-xl font-medium text-sm transition focus:border-brand-gold focus:outline-none focus:ring-2 focus:ring-brand-gold/20 focus:bg-white resize-vertical min-h-[100px]"></textarea>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="w-full py-4 rounded-xl font-bold text-sm flex items-center justify-center gap-2 text-brand-navyDark bg-gradient-to-r from-brand-gold to-brand-goldDark hover:shadow-lg hover:shadow-brand-gold/30 transform hover:-translate-y-0.5 transition-all duration-300">
+                                        <i class="fa-brands fa-whatsapp text-lg"></i> Send via WhatsApp
+                                    </button>
+                                    <p class="text-center text-xs text-brand-muted mt-4"><i class="fa-solid fa-lock mr-1"></i> Your info is private — we'll never share it.</p>
+                                </form>
+                            </div>
+
+                            <!-- Right: Contact Info Sidebar -->
+                            <div class="lg:col-span-2 bg-brand-navyDark p-8 md:p-10 flex flex-col justify-between relative overflow-hidden">
+                                <div class="absolute top-0 right-0 w-40 h-40 bg-brand-gold/10 rounded-full blur-3xl"></div>
+                                <div class="absolute bottom-0 left-0 w-32 h-32 bg-brand-gold/10 rounded-full blur-3xl"></div>
+
+                                <div class="relative z-10">
+                                    <h4 class="font-heading font-bold text-white text-lg mb-6">Prefer to reach out directly?</h4>
+                                    <p class="text-white/60 text-sm mb-8 leading-relaxed">Choose whichever method works best for you. We're available 7 days a week.</p>
+
+                                    <!-- Contact Methods -->
+                                    <div class="space-y-4">
+                                        <a href="tel:+447383105066" class="flex items-center gap-4 bg-white/5 border border-white/10 hover:border-brand-gold/40 p-4 rounded-2xl transition-all duration-300 group">
+                                            <div class="w-12 h-12 bg-gradient-to-br from-brand-gold to-brand-goldDark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition shadow-md shadow-brand-gold/20">
+                                                <i class="fa-solid fa-phone text-brand-navyDark"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-white/50 text-xs font-semibold uppercase tracking-wider mb-0.5">Call Us</p>
+                                                <p class="text-white font-bold text-lg">07383 105066</p>
+                                            </div>
+                                        </a>
+
+                                        <a href="https://wa.me/447383105066" target="_blank" class="flex items-center gap-4 bg-[#25D366]/10 border border-[#25D366]/20 hover:border-[#25D366]/50 p-4 rounded-2xl transition-all duration-300 group">
+                                            <div class="w-12 h-12 bg-[#25D366] rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition shadow-md shadow-[#25D366]/20">
+                                                <i class="fa-brands fa-whatsapp text-white text-xl"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-white/50 text-xs font-semibold uppercase tracking-wider mb-0.5">WhatsApp</p>
+                                                <p class="text-white font-bold">Message Us Now</p>
+                                            </div>
+                                        </a>
+
+                                        <a href="mailto:cpjroofing@gmail.com" class="flex items-center gap-4 bg-white/5 border border-white/10 hover:border-brand-gold/40 p-4 rounded-2xl transition-all duration-300 group">
+                                            <div class="w-12 h-12 bg-gradient-to-br from-brand-gold to-brand-goldDark rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition shadow-md shadow-brand-gold/20">
+                                                <i class="fa-solid fa-envelope text-brand-navyDark"></i>
+                                            </div>
+                                            <div>
+                                                <p class="text-white/50 text-xs font-semibold uppercase tracking-wider mb-0.5">Email Us</p>
+                                                <p class="text-white font-bold text-sm break-all">cpjroofing@gmail.com</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Bottom trust line -->
+                                <div class="relative z-10 mt-8 pt-6 border-t border-white/10">
+                                    <div class="flex items-center gap-4 flex-wrap">
+                                        <div class="flex items-center gap-2 text-white/40 text-xs">
+                                            <i class="fa-solid fa-shield-halved text-brand-gold"></i> Fully Insured
+                                        </div>
+                                        <div class="flex items-center gap-2 text-white/40 text-xs">
+                                            <i class="fa-solid fa-clock text-brand-gold"></i> Fast Response
+                                        </div>
+                                        <div class="flex items-center gap-2 text-white/40 text-xs">
+                                            <i class="fa-solid fa-star text-brand-gold"></i> 5-Star Rated
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (White Main Background, Black Bottom Bar) -->
+    <footer class="bg-white border-t border-brand-border">
+        <!-- Main Footer Area -->
+        <div class="pt-12 pb-12">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
+                    <div class="col-span-2 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
+                        <!-- Direct Logo without Box -->
+                        <img src="https://demo.brainywebs.com/wp-content/uploads/2026/06/chrome_NXhrZbqCdx-removebg-preview.png" class="h-16 md:h-20 mb-4 object-contain" alt="CJP Roofing Logo" onerror="this.style.display='none'">
+                        <p class="text-xs text-brand-muted leading-relaxed max-w-xs">Specialising in roofing, carpentry, and kitchen fitting across Abergavenny and South Wales.</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h4 class="font-heading font-bold text-brand-navyDark mb-3 text-sm uppercase tracking-wider">Contact</h4>
+                        <ul class="space-y-2.5 text-xs text-brand-slate">
+                            <li class="flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-phone text-brand-gold w-4 text-center"></i> <a href="tel:+447383105066" class="hover:text-brand-goldDark transition">07383 105066</a></li>
+                            <li class="flex items-center gap-2 justify-center md:justify-start"><i class="fa-brands fa-whatsapp text-brand-gold w-4 text-center"></i> <a href="https://wa.me/447383105066" class="hover:text-brand-goldDark transition">WhatsApp Us</a></li>
+                            <li class="flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-envelope text-brand-gold w-4 text-center"></i> <a href="mailto:cpjroofing@gmail.com" class="hover:text-brand-goldDark transition break-all">Email Us</a></li>
+                            <li class="flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-location-dot text-brand-gold w-4 text-center"></i> Abergavenny, Wales</li>
+                        </ul>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h4 class="font-heading font-bold text-brand-navyDark mb-3 text-sm uppercase tracking-wider">Quick Links</h4>
+                        <ul class="space-y-2.5 text-xs text-brand-slate">
+                            <li><a href="#services" class="hover:text-brand-goldDark transition">Our Services</a></li>
+                            <li><a href="#projects" class="hover:text-brand-goldDark transition">Recent Projects</a></li>
+                            <li><a href="#faq" class="hover:text-brand-goldDark transition">FAQ</a></li>
+                            <li><a href="#reviews" class="hover:text-brand-goldDark transition">Customer Reviews</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Black Bottom Bar -->
+        <div class="bg-brand-slate py-6 pb-28 md:pb-6">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-3">
+                    <a href="#" target="_blank" class="w-9 h-9 bg-white/5 rounded-lg flex items-center justify-center hover:bg-brand-gold hover:text-brand-navyDark transition text-white">
+                        <i class="fa-brands fa-facebook-f text-sm"></i>
+                    </a>
+                    <p class="text-xs text-white/50">© 2026 CJP Roofing. All rights reserved.</p>
+                    <p class="text-xs text-white/50">
+                        Built with <i class="fa-solid fa-heart text-brand-gold"></i> by
+                        <a href="https://brainywebs.com" target="_blank" class="text-brand-gold hover:text-white font-semibold transition">BrainyWebs</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 800, once: true, offset: 100 });
+
+        // Navbar scroll effect
+        const mainNav = document.getElementById('mainNav');
+        const mobileBottomBar = document.getElementById('mobileBottomBar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainNav.classList.add('nav-scrolled');
+            } else {
+                mainNav.classList.remove('nav-scrolled');
+            }
+            // Show mobile bottom bar after scrolling past hero
+            if (mobileBottomBar) {
+                if (window.scrollY > 300) {
+                    mobileBottomBar.classList.add('visible');
+                } else {
+                    mobileBottomBar.classList.remove('visible');
+                }
+            }
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            mobileMenuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMobileMenu.addEventListener('click', closeMenu);
+        mobileMenuOverlay.addEventListener('click', closeMenu);
+
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            mobileMenuOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Canvas Rain with Umbrella
+        (function() {
+            const canvas = document.getElementById('rainCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const section = document.getElementById('rain-section');
+            const umbrella = document.getElementById('cursor-umbrella');
+
+            let mouseX = -500, mouseY = -500;
+            let isInside = false;
+            const drops = [];
+            const splashes = [];
+            const UMBRELLA_RADIUS = 120;
+
+            function resize() {
+                canvas.width = section.offsetWidth;
+                canvas.height = section.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            // Track mouse position relative to section
+            section.addEventListener('mousemove', function(e) {
+                const rect = section.getBoundingClientRect();
+                mouseX = e.clientX - rect.left;
+                mouseY = e.clientY - rect.top;
+                isInside = true;
+                umbrella.style.opacity = '1';
+                umbrella.style.left = e.clientX + 'px';
+                umbrella.style.top = e.clientY + 'px';
+            });
+            section.addEventListener('mouseleave', function() {
+                isInside = false;
+                umbrella.style.opacity = '0';
+            });
+
+            // Touch support
+            section.addEventListener('touchmove', function(e) {
+                const rect = section.getBoundingClientRect();
+                const touch = e.touches[0];
+                mouseX = touch.clientX - rect.left;
+                mouseY = touch.clientY - rect.top;
+                isInside = true;
+                umbrella.style.opacity = '1';
+                umbrella.style.left = touch.clientX + 'px';
+                umbrella.style.top = touch.clientY + 'px';
+            }, { passive: true });
+            section.addEventListener('touchend', function() {
+                isInside = false;
+                umbrella.style.opacity = '0';
+            });
+
+            // Raindrop class
+            function createDrop() {
+                return {
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * -canvas.height,
+                    speed: 4 + Math.random() * 6,
+                    length: 12 + Math.random() * 20,
+                    thickness: 1 + Math.random() * 1.5,
+                    opacity: 0.15 + Math.random() * 0.35,
+                    deflected: false,
+                    deflectedVx: 0,
+                    deflectedVy: 0
+                };
+            }
+
+            // Initialize drops
+            const DROP_COUNT = 200;
+            for (let i = 0; i < DROP_COUNT; i++) {
+                drops.push(createDrop());
+            }
+
+            // Splash particle
+            function createSplash(x, y) {
+                const count = 2 + Math.floor(Math.random() * 3);
+                for (let i = 0; i < count; i++) {
+                    splashes.push({
+                        x: x,
+                        y: y,
+                        vx: (Math.random() - 0.5) * 3,
+                        vy: -(1 + Math.random() * 3),
+                        life: 1,
+                        decay: 0.03 + Math.random() * 0.04,
+                        size: 1 + Math.random() * 2
+                    });
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Update and draw drops
+                for (let i = 0; i < drops.length; i++) {
+                    const d = drops[i];
+
+                    if (!d.deflected) {
+                        d.y += d.speed;
+
+                        // Check umbrella collision
+                        if (isInside) {
+                            const dx = d.x - mouseX;
+                            const dy = d.y - mouseY;
+                            const dist = Math.sqrt(dx * dx + dy * dy);
+                            if (dist < UMBRELLA_RADIUS && dy > -UMBRELLA_RADIUS * 0.3) {
+                                d.deflected = true;
+                                const angle = Math.atan2(dy, dx);
+                                d.deflectedVx = Math.cos(angle) * (3 + Math.random() * 4);
+                                d.deflectedVy = Math.sin(angle) * (2 + Math.random() * 3) - 2;
+                                createSplash(d.x, d.y);
+                            }
+                        }
+                    } else {
+                        d.x += d.deflectedVx;
+                        d.y += d.deflectedVy;
+                        d.deflectedVy += 0.15; // gravity
+                        d.opacity -= 0.01;
+                    }
+
+                    // Reset drop if off screen
+                    if (d.y > canvas.height + 20 || d.x < -20 || d.x > canvas.width + 20 || d.opacity <= 0) {
+                        drops[i] = createDrop();
+                        continue;
+                    }
+
+                    // Draw drop
+                    ctx.beginPath();
+                    if (d.deflected) {
+                        // Deflected drops match Gold color
+                        ctx.strokeStyle = 'rgba(229, 169, 60, ' + Math.max(0, d.opacity) + ')';
+                        ctx.lineWidth = d.thickness * 0.8;
+                        ctx.moveTo(d.x, d.y);
+                        ctx.lineTo(d.x - d.deflectedVx * 0.5, d.y - d.deflectedVy * 0.5);
+                    } else {
+                        ctx.strokeStyle = 'rgba(180, 200, 220, ' + d.opacity + ')';
+                        ctx.lineWidth = d.thickness;
+                        ctx.moveTo(d.x, d.y);
+                        ctx.lineTo(d.x + 1, d.y + d.length);
+                    }
+                    ctx.stroke();
+                }
+
+                // Update and draw splashes
+                for (let i = splashes.length - 1; i >= 0; i--) {
+                    const s = splashes[i];
+                    s.x += s.vx;
+                    s.y += s.vy;
+                    s.vy += 0.12;
+                    s.life -= s.decay;
+
+                    if (s.life <= 0) {
+                        splashes.splice(i, 1);
+                        continue;
+                    }
+
+                    ctx.beginPath();
+                    // Splash color updated to match brand gold palette
+                    ctx.fillStyle = 'rgba(229, 169, 60, ' + (s.life * 0.6) + ')';
+                    ctx.arc(s.x, s.y, s.size * s.life, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                // Subtle lightning flash (random)
+                if (Math.random() < 0.001) {
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                }
+
+                requestAnimationFrame(animate);
+            }
+            animate();
+        })();
+
+        // Ticker scroll
+        (function() {
+            const ticker = document.getElementById('ticker');
+            if (!ticker) return;
+            const items = ticker.querySelectorAll('.ticker-item');
+            const halfCount = items.length / 2;
+            let pos = 0;
+            let speed = 80;
+            let lastTime = null;
+            let paused = false;
+
+            ticker.addEventListener('mouseenter', () => paused = true);
+            ticker.addEventListener('mouseleave', () => { paused = false; lastTime = null; });
+            ticker.addEventListener('touchstart', () => paused = true, { passive: true });
+            ticker.addEventListener('touchend', () => { paused = false; lastTime = null; }, { passive: true });
+
+            function step(ts) {
+                if (!lastTime) lastTime = ts;
+                const dt = (ts - lastTime) / 1000;
+                lastTime = ts;
+                if (!paused) {
+                    pos -= speed * dt;
+                    if (Math.abs(pos) >= items[0].offsetWidth * halfCount + 32 * halfCount) {
+                        pos = 0;
+                    }
+                    ticker.style.transform = 'translateX(' + pos + 'px)';
+                }
+                requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        })();
+
+        // Quote form handler
+        function handleQuoteSubmit() {
+            const form = document.getElementById('quoteForm');
+            const name = form.querySelector('input[name="name"]').value;
+            const location = form.querySelector('input[name="location"]').value;
+            const details = form.querySelector('textarea[name="details"]').value;
+            const message = encodeURIComponent(
+                'Hi CJP Roofing, I would like to request a quote.\n\nName: ' + name + '\nLocation: ' + location + '\nProject Details: ' + details
+            );
+            window.open('https://wa.me/447383105066?text=' + message, '_blank');
+        }
+
+        // Contact form handler
+        function handleContactSubmit() {
+            const form = document.getElementById('contactForm');
+            const name = form.querySelector('input[name="contact_name"]').value;
+            const location = form.querySelector('input[name="contact_location"]').value;
+            const service = form.querySelector('select[name="contact_service"]').value;
+            const details = form.querySelector('textarea[name="contact_details"]').value;
+            const message = encodeURIComponent(
+                'Hi CJP Roofing, I would like to request a quote.\n\nName: ' + name + '\nLocation: ' + location + '\nService: ' + (service || 'Not specified') + '\nProject Details: ' + details
+            );
+            window.open('https://wa.me/447383105066?text=' + message, '_blank');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
